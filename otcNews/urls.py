@@ -30,6 +30,13 @@ urlpatterns = [
     url(r'^Pg9$', views.pg9, name='otcnews_sub'),
     url(r'^Pg10$', views.pg10, name='otcnews_sub'),
     url(r'^securities$', views.otcSecuritiesList, name='otcsecurities'),
+    url(r'^Pga1$', views.otcSecuritiesList, name='otcsecurities_sub'),
+    url(r'^Pga2$', views.pga2, name='otcsecurities_sub'),
+    url(r'^Pga3$', views.pga3, name='otcsecurities_sub'),
+    url(r'^Pga4$', views.pga4, name='otcsecurities_sub'),
+    url(r'^Pga5$', views.pga5, name='otcsecurities_sub'),
+    url(r'^Pga6$', views.pga6, name='otcsecurities_sub'),
+    url(r'^Pga576$', views.pga576, name='otcsecurities_sub'),
     url(r'^send$', views.sendNews, name='send'),
 
 

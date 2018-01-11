@@ -20,31 +20,57 @@
 
 
             <table>
-
+                <col width="10">
+                <col width="80">
+                <col width="350">
+                <col width="150">
+                <col width="250">
+                <col width="250">
+                <col width="250">
                 <tr><th>Country</th><th>Symbol</th><th>Company Name</th><th>Trading Venue</th><th>OTC Tier</th><th>Security Type</th><th>Security Name</th></tr>
 
                 <tbody class="list">
-                    {% for item in securities %}
-                        <tr>
-                            <td class="country">{{ item.country }}</td>
-                            <td class="symbol">{{ item.symbol }}</td>
-                            <td class="name">{{ item.company_name }}</td>
-                            <td class="venue">{{ item.trading_venue }}</td>
-                            <td class="tier">{{ item.otc_tier }}</td>
-                            <td class="type">{{ item.security_type }}</td>
-                            <td class="security_name">{{ item.security_name }}</td>
+                {% for item in securities %}
+                    <tr>
+                        <td class="country">{{ item.country }}</td>
+                        <td class="symbol">{{ item.symbol }}</td>
+                        <td class="name">{{ item.company_name }}</td>
+                        <td class="venue">{{ item.trading_venue }}</td>
+                        <td class="tier">{{ item.otc_tier }}</td>
+                        <td class="type">{{ item.security_type }}</td>
+                        <td class="security_name">{{ item.security_name }}</td>
 
-                        </tr>
-                    {% endfor %}
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
-        <script type="text/javascript">
-            var options = {
-                valueNames: [ 'country','symbol','name','venue','tier','type','security_name' ]
-            };
-            var hackerList = new List('list', options);
-        </script>
+            <script type="text/javascript">
+                var options = {
+                    valueNames: [ 'country','symbol','name','venue','tier','type','security_name' ]
+                };
+                var hackerList = new List('list', options);
+            </script>
+        </div>
+        <div>
+            <table>
+
+
+                <tr>
+                <tr>                     ------------------------------------------------------------------------------------------------------------------------------------------</tr>
+                {% for pg in pg_num %}
+                    {% if pg < 6 %}
+                        <div><th><a class="nav-link" href='Pga{{ pg }}'>Pg{{ pg }} <span class="sr-only"></span></a></th></div>
+                    {% elif pg == 6 %}
+                        <div><th><a class="nav-link" href='Pga{{ pg }}'>... <span class="sr-only"></span></a></th></div>
+                    {% elif pg >= pg_num|length %}
+                        <div><th><a class="nav-link" href='Pga{{ pg }}'>Pg{{ pg }} <span class="sr-only"></span></a></th></div>
+                    {% endif %}
+                {% endfor %}
+
+                </tr>
+            </table>
         </div>
     </div>
+
 
 {% endblock %}

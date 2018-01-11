@@ -71,8 +71,54 @@ def pg10(request):
 
 
 def otcSecuritiesList(request):
-    securities = OtcSecurities.objects.all()
-    return render(request, 'otcSecurities.html', {'securities': securities})
+    securities = OtcSecurities.objects.all()[:18]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga2(request):
+    securities = OtcSecurities.objects.all()[18:36]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga3(request):
+    securities = OtcSecurities.objects.all()[36:54]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga4(request):
+    securities = OtcSecurities.objects.all()[54:72]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga5(request):
+    securities = OtcSecurities.objects.all()[72:90]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga6(request):
+    securities = OtcSecurities.objects.all()[90:]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
+def pga576(request):
+    securities = OtcSecurities.objects.all()[len(OtcSecurities.objects.all())-18:len(OtcSecurities.objects.all())]
+    securities_all = OtcSecurities.objects.all()
+    pg_num =list(range(1, (int(len(securities_all)/18)+1)+1))
+    #pg_num = list(range(1, 11))
+    return render(request, 'otcSecurities.html', {'securities': securities,'pg_num':pg_num})
+
 
 def sendNews(request):
     newsItems = OtcNews.objects.filter(category='news').order_by('-datetime')
