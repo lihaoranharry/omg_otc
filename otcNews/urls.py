@@ -16,9 +16,21 @@ Including another URLconf
 from django.conf.urls import url
 from . import views
 
+
 urlpatterns = [
     url(r'^news$', views.otcNewsList, name='otcnews'),
+    url(r'^Pg1$', views.otcNewsList, name='otcnews'),
+    url(r'^Pg2$', views.pg2, name='otcnews_sub'),
+    url(r'^Pg3$', views.pg3, name='otcnews_sub'),
+    url(r'^Pg4$', views.pg4, name='otcnews_sub'),
+    url(r'^Pg5$', views.pg5, name='otcnews_sub'),
+    url(r'^Pg6$', views.pg6, name='otcnews_sub'),
+    url(r'^Pg7$', views.pg7, name='otcnews_sub'),
+    url(r'^Pg8$', views.pg8, name='otcnews_sub'),
+    url(r'^Pg9$', views.pg9, name='otcnews_sub'),
+    url(r'^Pg10$', views.pg10, name='otcnews_sub'),
     url(r'^securities$', views.otcSecuritiesList, name='otcsecurities'),
     url(r'^send$', views.sendNews, name='send'),
+
 
 ]

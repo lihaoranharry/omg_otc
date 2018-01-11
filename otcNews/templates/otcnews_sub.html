@@ -7,10 +7,10 @@
 
         <div class="row">
             <table class="sortable">
-            <col width="10">
-                <col width="80">
-            <col width="650">
 
+            <col width="100">
+                <col width="80">
+            <col width="550">
                 <tr><th>Weblink</th><th>Ticker</th><th>Description</th><th>Date</th></tr>
 
                 {% for item in newsItems %}
@@ -23,17 +23,14 @@
                 {% endfor %}
             </table>
         </div>
-
-        <table>
-        <tr>
-        <tr>------------------------------------------------------------------------------------------------------------------------------------------</tr>
-            {% for pg in pg_num %}
-                <div><th><a class="nav-link" href='Pg{{ pg }}'>Pg{{ pg }} <span class="sr-only"></span></a></th><div>
-            {% endfor %}
-
-        </tr>
-        </table>
-
-
     </div>
+<div>
+{% for pg in pg_num %}
+
+<h1><a href='/'>Pg{{ pg }}</a></h1>
+                {% endfor %}
+</div>
+
+
+
 {% endblock %}
